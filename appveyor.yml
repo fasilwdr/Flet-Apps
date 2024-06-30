@@ -1,0 +1,20 @@
+version: 1.0.{build}
+os: macos
+platform: x64
+
+environment:
+  app_name: Markdown
+  output_path: builds/ipa
+  product_name: Markdown
+  build_version: 0.1.1
+
+install:
+  - brew update
+  - brew install flet
+
+build_script:
+  - flet build ipa "$app_name" --output "$output_path" --product "$product_name" --build-version "$build_version"
+
+artifacts:
+  - path: builds/$app_name/ipa/**
+    name: Markdown Build
