@@ -15,6 +15,8 @@ install:
   - source venv/bin/activate
   - pip install -r "$app_name/requirements.txt"
   - brew install --cask flutter
+  - brew install cocoapods
+  - pod setup
   - flutter doctor
 
 build_script:
