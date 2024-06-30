@@ -3,9 +3,9 @@ os: macos
 platform: x64
 
 environment:
-  app_name: Markdown
-  output_path: builds/ipa
-  product_name: Markdown
+  app_name: Test
+  output_path: $app_name/builds/ipa
+  product_name: Test
   build_version: 1.0.{build}
 
 install:
@@ -13,7 +13,7 @@ install:
   - brew install python3
   - python3 -m venv venv
   - source venv/bin/activate
-  - pip install flet
+  - pip install -r "$app_name/requirements.txt"
   - brew install --cask flutter
   - flutter doctor
 
@@ -22,5 +22,5 @@ build_script:
   - flet build ipa "$app_name" --output "$output_path" --product "$product_name" --build-version "$build_version"
 
 artifacts:
-  - path: builds/ipa/**
+  - path: $app_name/builds/ipa/**
     name: Markdown Build
