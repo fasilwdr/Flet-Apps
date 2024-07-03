@@ -3,9 +3,9 @@ os: macos
 platform: x64
 
 environment:
-  app_name: Test
+  app_name: DeviceID
   output_path: $app_name/builds/ipa
-  product_name: Test
+  product_name: DeviceID
   build_version: 1.0.{build}
 
 install:
